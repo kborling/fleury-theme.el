@@ -1,16 +1,24 @@
-;;; fleury-theme.el --- The fleury color theme
+;;; fleury-theme.el --- The fleury color theme  -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2025 Shams Parvez Arka
-;; See end of file for extended copyright information
 
-;; Author    : Shams Parvez Arka <parvez6826@gmail.com>
-;; URL       : https://github.com/ShamsParvezArka/fleury-theme.el
-;; Version   : 0.5
-;; Commentary: "Coming up with an original idea in 21st century
-;;             is tough, even my dreams aren't original anymore!"
+;; Author: Shams Parvez Arka <parvez6826@gmail.com>
+;; URL: https://github.com/ShamsParvezArka/fleury-theme.el
+;; Version: 0.5
+;; Package-Requires: ((emacs "24.1"))
+;; Keywords: faces, themes
+
+;;; Commentary:
+
+;; The fleury color theme inspired by Ryan Fleury's debugger live stream.
+;;
+;; "Coming up with an original idea in 21st century is tough,
+;; even my dreams aren't original anymore!"
+
+;;; Code:
 
 
-(deftheme fleury "The fleury color theme")
+(deftheme fleury "The fleury color theme.")
 
 ;; Color palette
 (let ((rich-black         "#020202")
@@ -32,7 +40,7 @@
       (sky-blue-lite      "#2f2f38")
       (bright-red         "#ff0000")
       (fresh-green        "#66bc11")
-      (lime-green         "#003939")      
+      (lime-green         "#003939")
       (vivid-vermilion    "#f0500c")
       (golden-yellow      "#f0bb0c")
       (pure-black         "#000000")
@@ -67,12 +75,12 @@
    `(font-lock-string-face ((t (:foreground ,bright-orange))))
    `(font-lock-constant-face ((t (:foreground ,bright-orange))))
    `(font-lock-builtin-face ((t (:foreground ,dusty-rose))))
-   `(font-lock-preprocessor-face ((t (:foreground,dusty-rose))))
+   `(font-lock-preprocessor-face ((t (:foreground ,dusty-rose))))
    `(font-lock-type-face ((t (:foreground ,sunflower-yellow))))
    `(font-lock-function-name-face ((t (:foreground ,burnt-orange))))
+   `(font-lock-function-call-face ((t (:foreground ,burnt-orange))))
    `(font-lock-variable-name-face ((t (:foreground ,light-bronze))))
-   `(font-lock-variable-use-face ((t (:foreground ,sky-blue))))   
-   `(font-lock-preprocessor-face ((t (:foreground ,dusty-rose))))
+   `(font-lock-variable-use-face ((t (:foreground ,sky-blue))))
    `(font-lock-warning-face ((t (:foreground ,bright-red :weight bold))))
    `(font-lock-doc-face ((t (:foreground ,fresh-green))))
 
@@ -97,32 +105,26 @@
 
    ;; Compilation
    `(flycheck-error ((t (:underline (:color ,bright-red :style wave)))))
-
-   
-   `(compilation-info ((t ,(list :foreground fresh-green
-                                 :inherit 'unspecified))))
-   `(compilation-warning ((t ,(list :foreground coffee-brown
-                                    :bold t
-                                    :inherit 'unspecified))))
+   `(compilation-info ((t (:foreground ,fresh-green :inherit unspecified))))
+   `(compilation-warning ((t (:foreground ,coffee-brown :weight bold :inherit unspecified))))
    `(compilation-error ((t (:foreground ,bright-red))))
-   `(compilation-mode-line-fail ((t ,(list :foreground bright-red
-                                           :weight 'bold
-                                           :inherit 'unspecified))))
-   `(compilation-mode-line-exit ((t ,(list :foreground fresh-green
-                                           :weight 'bold
-                                           :inherit 'unspecified))))
+   `(compilation-mode-line-fail ((t (:foreground ,bright-red :weight bold :inherit unspecified))))
+   `(compilation-mode-line-exit ((t (:foreground ,fresh-green :weight bold :inherit unspecified))))
    ))
 
-(add-hook 'prog-mode-hook 'hl-line-mode)
-(setq-default cursor-type 'box)
-(defun custom/update-cursor-type ()
-  (setq cursor-type
-        (if (derived-mode-p 'prog-mode 'text-mode)
-            '(bar . 2)  
-          'box)))
-(add-hook 'post-command-hook 'custom/update-cursor-type)
+;;;###autoload
+(and load-file-name
+     (boundp 'custom-theme-load-path)
+     (add-to-list 'custom-theme-load-path
+                  (file-name-as-directory
+                   (file-name-directory load-file-name))))
 
 (provide-theme 'fleury)
+
+;; Local Variables:
+;; indent-tabs-mode: nil
+;; End:
+;;; fleury-theme.el ends here
 
 
 ;; MIT License
