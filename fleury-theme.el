@@ -110,6 +110,80 @@
    `(compilation-error ((t (:foreground ,bright-red))))
    `(compilation-mode-line-fail ((t (:foreground ,bright-red :weight bold :inherit unspecified))))
    `(compilation-mode-line-exit ((t (:foreground ,fresh-green :weight bold :inherit unspecified))))
+
+   ;; Dired
+   `(dired-directory ((t (:weight bold :foreground ,sky-blue))))
+
+   ;; Flymake
+   `(flymake-error ((((supports :underline (:style wave)))
+                     (:underline (:style wave :color ,bright-red) :inherit unspecified))
+                    (t (:foreground ,bright-red :weight bold :underline t))))
+   `(flymake-warning ((((supports :underline (:style wave)))
+                       (:underline (:style wave :color ,golden-yellow) :inherit unspecified))
+                      (t (:foreground ,golden-yellow :weight bold :underline t))))
+   `(flymake-note ((((supports :underline (:style wave)))
+                    (:underline (:style wave :color ,sky-blue) :inherit unspecified))
+                   (t (:foreground ,sky-blue :weight bold :underline t))))
+
+   ;; Diff Mode
+   `(diff-added ((t (:foreground ,fresh-green :background ,rich-black :extend t))))
+   `(diff-changed ((t (:foreground ,golden-yellow :background ,rich-black :extend t))))
+   `(diff-removed ((t (:foreground ,bright-red :background ,rich-black :extend t))))
+   `(diff-refine-added ((t (:background ,fresh-green :foreground ,pure-black))))
+   `(diff-refine-changed ((t (:background ,golden-yellow :foreground ,pure-black))))
+   `(diff-refine-removed ((t (:background ,bright-red :foreground ,pure-black))))
+   `(diff-header ((t (:background ,dark-slate :foreground ,light-bronze))))
+   `(diff-file-header ((t (:background ,dark-slate :foreground ,amber-gold :weight bold))))
+
+   ;; Diff-HL
+   `(diff-hl-change ((t (:foreground ,golden-yellow :background ,rich-black))))
+   `(diff-hl-delete ((t (:foreground ,bright-red :background ,rich-black))))
+   `(diff-hl-insert ((t (:foreground ,fresh-green :background ,rich-black))))
+
+   ;; Corfu (Completion)
+   `(corfu-default ((t (:foreground ,light-bronze :background ,dark-slate))))
+   `(corfu-current ((t (:foreground ,amber-gold :background ,charcoal-gray-lite :weight bold))))
+   `(corfu-bar ((t (:background ,medium-gray))))
+   `(corfu-border ((t (:background ,dark-slate))))
+
+   ;; Marginalia
+   `(marginalia-documentation ((t (:foreground ,dim-gray))))
+   `(marginalia-file-name ((t (:foreground ,light-bronze))))
+   `(marginalia-key ((t (:foreground ,goldenrod))))
+
+   ;; Helpful
+   `(helpful-heading ((t (:foreground ,amber-gold :weight bold :height 1.2))))
+
+   ;; Deadgrep
+   `(deadgrep-filename-face ((t (:foreground ,sky-blue :weight bold))))
+   `(deadgrep-match-face ((t (:foreground ,amber-gold :weight bold))))
+
+   ;; Eshell
+   `(eshell-prompt ((t (:foreground ,amber-gold :weight bold))))
+   `(eshell-ls-archive ((t (:foreground ,dusty-rose :weight bold))))
+   `(eshell-ls-backup ((t (:foreground ,dim-gray))))
+   `(eshell-ls-clutter ((t (:foreground ,dim-gray))))
+   `(eshell-ls-directory ((t (:foreground ,sky-blue :weight bold))))
+   `(eshell-ls-executable ((t (:foreground ,fresh-green :weight bold))))
+   `(eshell-ls-missing ((t (:foreground ,bright-red))))
+   `(eshell-ls-product ((t (:foreground ,bright-orange))))
+   `(eshell-ls-special ((t (:foreground ,golden-yellow :weight bold))))
+   `(eshell-ls-symlink ((t (:foreground ,dusty-rose :weight bold))))
+
+   ;; HL-Todo
+   `(hl-todo ((t (:foreground ,amber-gold :weight bold))))
+
+   ;; Which Function
+   `(which-func ((t (:foreground ,sky-blue))))
+
+   ;; Completions
+   `(completions-annotations ((t (:foreground ,dim-gray))))
+   `(completions-common-part ((t (:foreground ,amber-gold))))
+   `(completions-first-difference ((t (:inherit bold :foreground ,light-bronze))))
+
+   ;; Icomplete
+   `(icomplete-first-match ((t (:foreground ,amber-gold :weight bold))))
+   `(icomplete-selected-match ((t (:background ,charcoal-gray-lite :foreground ,golden-yellow :weight bold))))
    ))
 
 ;;;###autoload
