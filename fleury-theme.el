@@ -1,19 +1,53 @@
 ;;; fleury-theme.el --- The fleury color theme  -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2025 Shams Parvez Arka
+;; Copyright (C) 2025 Kevin Borling (fork modifications)
 
-;; Author: Shams Parvez Arka <parvez6826@gmail.com>
-;; URL: https://github.com/ShamsParvezArka/fleury-theme.el
-;; Version: 0.5
+;; Original Author: Shams Parvez Arka <parvez6826@gmail.com>
+;; Maintainer: Kevin Borling
+;; URL: https://github.com/kborling/fleury-theme.el
+;; Original URL: https://github.com/ShamsParvezArka/fleury-theme.el
+;; Version: 0.6
 ;; Package-Requires: ((emacs "24.1"))
 ;; Keywords: faces, themes
+;; SPDX-License-Identifier: MIT
+
+;; This file is NOT part of GNU Emacs.
+
+;; Permission is hereby granted, free of charge, to any person obtaining a copy
+;; of this software and associated documentation files (the "Software"), to deal
+;; in the Software without restriction, including without limitation the rights
+;; to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+;; copies of the Software, and to permit persons to whom the Software is
+;; furnished to do so, subject to the following conditions:
+;;
+;; The above copyright notice and this permission notice shall be included in all
+;; copies or substantial portions of the Software.
+;;
+;; THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+;; IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+;; FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+;; AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+;; LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+;; OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+;; SOFTWARE.
 
 ;;; Commentary:
 
 ;; The fleury color theme inspired by Ryan Fleury's debugger live stream.
 ;;
+;; This is a maintained fork with fixes and enhancements including:
+;; - Fixed theme loading issues
+;; - Added Emacs 29.1+ font-lock-function-call-face support
+;; - Removed inappropriate hooks (moved to user configuration)
+;; - Added extensive package support (corfu, marginalia, diff-hl, flymake, etc.)
+;; - Added complete default UI component coverage (tab-bar, tab-line, widgets, etc.)
+;; - Fixed byte-compilation issues
+;; - Proper Emacs Lisp package format compliance
+;;
 ;; "Coming up with an original idea in 21st century is tough,
 ;; even my dreams aren't original anymore!"
+;;  - Original theme author
 
 ;;; Code:
 
@@ -242,26 +276,3 @@
 ;; indent-tabs-mode: nil
 ;; End:
 ;;; fleury-theme.el ends here
-
-
-;; MIT License
-
-;; Copyright (c) 2025 Shams Parvez Arka
-
-;; Permission is hereby granted, free of charge, to any person obtaining a copy
-;; of this software and associated documentation files (the "Software"), to deal
-;; in the Software without restriction, including without limitation the rights
-;; to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-;; copies of the Software, and to permit persons to whom the Software is
-;; furnished to do so, subject to the following conditions:
-  
-;; The above copyright notice and this permission notice shall be included in all
-;; copies or substantial portions of the Software.
-
-;; THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-;; IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-;; FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-;; AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-;; LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-;; OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-;; SOFTWARE.
