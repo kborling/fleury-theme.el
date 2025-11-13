@@ -61,9 +61,19 @@
    `(cursor ((t (:background ,fresh-green))))
    `(region ((t (:background ,lime-green))))
    `(highlight ((t (:background ,charcoal-gray-lite))))
+   `(hl-line ((t (:background ,charcoal-gray-lite :extend t))))
    `(fringe ((t (:background ,dark-slate))))
    `(vertical-border ((t (:foreground ,dark-slate))))
    `(minibuffer-prompt ((t (:foreground ,amber-gold :weight bold))))
+   `(link ((t (:foreground ,sky-blue :underline t))))
+   `(link-visited ((t (:foreground ,dusty-rose :underline t))))
+   `(button ((t (:underline t))))
+   `(shadow ((t (:foreground ,dim-gray))))
+   `(success ((t (:foreground ,fresh-green :weight bold))))
+   `(warning ((t (:foreground ,golden-yellow :weight bold))))
+   `(error ((t (:foreground ,bright-red))))
+   `(trailing-whitespace ((t (:background ,bright-red))))
+   `(escape-glyph ((t (:foreground ,golden-yellow :weight bold))))
 
    ;; Line Numbers
    `(line-number ((t (:foreground ,medium-gray :background ,rich-black))))
@@ -91,6 +101,12 @@
    `(mode-line-inactive ((t (:background ,rich-black
                                          :foreground ,mode-line-foreground-active
                                          :box (:line-width 1 :color ,mode-line-border :style nil)))))
+   `(mode-line-buffer-id ((t (:weight bold :foreground ,amber-gold))))
+   `(mode-line-emphasis ((t (:foreground ,light-bronze))))
+   `(mode-line-highlight ((t (:foreground ,goldenrod :box nil :weight bold))))
+
+   ;; Header Line
+   `(header-line ((t (:background ,dark-slate :foreground ,amber-gold :box (:line-width 1 :color ,mode-line-border) :extend t))))
 
    ;; Search
    `(isearch ((t (:background ,vivid-vermilion :foreground ,pure-black))))
@@ -184,6 +200,33 @@
    ;; Icomplete
    `(icomplete-first-match ((t (:foreground ,amber-gold :weight bold))))
    `(icomplete-selected-match ((t (:background ,charcoal-gray-lite :foreground ,golden-yellow :weight bold))))
+
+   ;; Tab Bar
+   `(tab-bar ((t (:background ,dark-slate :foreground ,light-bronze))))
+   `(tab-bar-tab ((t (:background ,mode-line-background-active :foreground ,amber-gold :box (:line-width 1 :color ,mode-line-border)))))
+   `(tab-bar-tab-inactive ((t (:background ,rich-black :foreground ,dim-gray :box (:line-width 1 :color ,mode-line-border)))))
+
+   ;; Tab Line
+   `(tab-line ((t (:background ,dark-slate :foreground ,light-bronze))))
+   `(tab-line-tab ((t (:background ,mode-line-background-active :foreground ,amber-gold :box (:line-width 1 :color ,mode-line-border)))))
+   `(tab-line-tab-inactive ((t (:background ,rich-black :foreground ,dim-gray :box (:line-width 1 :color ,mode-line-border)))))
+   `(tab-line-tab-current ((t (:background ,mode-line-background-active :foreground ,amber-gold :box (:line-width 1 :color ,mode-line-border)))))
+   `(tab-line-highlight ((t (:background ,charcoal-gray-lite :foreground ,goldenrod))))
+   `(tab-line-close-highlight ((t (:foreground ,bright-red))))
+
+   ;; Widget Faces
+   `(widget-field ((t (:background ,dark-slate :foreground ,light-bronze))))
+   `(widget-button ((t (:underline t :weight bold))))
+   `(widget-button-pressed ((t (:foreground ,amber-gold))))
+   `(widget-documentation ((t (:foreground ,dim-gray))))
+
+   ;; Custom Faces
+   `(custom-button ((t (:background ,dark-slate :foreground ,light-bronze :box (:line-width 2 :style released-button)))))
+   `(custom-button-pressed ((t (:background ,charcoal-gray-lite :foreground ,amber-gold :box (:line-width 2 :style pressed-button)))))
+   `(custom-button-mouse ((t (:background ,charcoal-gray-lite :foreground ,goldenrod :box (:line-width 2 :style released-button)))))
+   `(custom-variable-tag ((t (:foreground ,sky-blue :weight bold))))
+   `(custom-group-tag ((t (:foreground ,goldenrod :weight bold :height 1.2))))
+   `(custom-state ((t (:foreground ,fresh-green))))
    ))
 
 ;;;###autoload
