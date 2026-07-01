@@ -7,7 +7,7 @@
 ;; Maintainer: Kevin Borling
 ;; URL: https://github.com/kborling/fleury-theme.el
 ;; Original URL: https://github.com/ShamsParvezArka/fleury-theme.el
-;; Version: 0.6
+;; Version: 0.7
 ;; Package-Requires: ((emacs "24.1"))
 ;; Keywords: faces, themes
 ;; SPDX-License-Identifier: MIT
@@ -81,7 +81,7 @@
       (aqua-ice           "#8ffff2")
       (dusty-sage         "#9ba290")
       (coffee-brown       "#63523d")
-      
+
       (mode-line-foreground-active "#e7aa4d")
       (mode-line-background-active "#1a120b")
       (mode-line-border            "#161616")
@@ -114,7 +114,7 @@
    `(line-number-current-line ((t (:background ,charcoal-gray-lite :foreground ,light-bronze))))
 
    ;; Font Lock Faces
-   `(font-lock-comment-face ((t (:foreground ,dim-gray))))
+   `(font-lock-comment-face ((t (:foreground ,dim-gray :slant italic))))
    `(font-lock-keyword-face ((t (:foreground ,goldenrod))))
    `(font-lock-string-face ((t (:foreground ,bright-orange))))
    `(font-lock-constant-face ((t (:foreground ,bright-orange))))
@@ -126,7 +126,18 @@
    `(font-lock-variable-name-face ((t (:foreground ,light-bronze))))
    `(font-lock-variable-use-face ((t (:foreground ,sky-blue))))
    `(font-lock-warning-face ((t (:foreground ,bright-red :weight bold))))
-   `(font-lock-doc-face ((t (:foreground ,fresh-green))))
+   `(font-lock-doc-face ((t (:foreground ,fresh-green :slant italic))))
+   ;; Treesit font-lock faces
+   `(font-lock-bracket-face ((t (:foreground ,light-bronze))))
+   `(font-lock-delimiter-face ((t (:foreground ,light-bronze))))
+   `(font-lock-escape-face ((t (:foreground ,aqua-ice))))
+   `(font-lock-misc-punctuation-face ((t (:foreground ,light-bronze))))
+   `(font-lock-number-face ((t (:foreground ,bright-orange))))
+   `(font-lock-operator-face ((t (:foreground ,goldenrod))))
+   `(font-lock-property-name-face ((t (:foreground ,light-bronze))))
+   `(font-lock-property-use-face ((t (:foreground ,light-bronze))))
+   `(font-lock-punctuation-face ((t (:foreground ,light-bronze))))
+   `(font-lock-regexp-face ((t (:foreground ,fresh-green))))
 
    ;; Mode Line
    `(mode-line ((t (:background ,mode-line-background-active
@@ -146,15 +157,33 @@
    `(isearch ((t (:background ,vivid-vermilion :foreground ,pure-black))))
    `(lazy-highlight ((t (:background ,golden-yellow :foreground ,pure-black))))
 
-   ;; Custom Elements
+   ;; Borders
+   `(border ((t (:background ,dark-slate :foreground ,light-bronze))))
+   `(internal-border ((t (:background ,rich-black))))
+   `(fill-column-indicator ((t (:foreground ,charcoal-gray :weight semilight))))
+
+   ;; Paren matching
    `(show-paren-match ((t (:background ,sky-blue-lite))))
-   `(show-paren-mismatch ((t (:background ,dusty-sage))))
+   `(show-paren-mismatch ((t (:background ,bright-red :foreground ,pure-black :weight bold))))
 
    ;; Tooltip and Popup
    `(tooltip ((t (:background ,coffee-brown :foreground ,amber-gold))))
 
+   ;; Flycheck
+   `(flycheck-error ((((supports :underline (:style wave)))
+                      (:underline (:style wave :color ,bright-red) :inherit unspecified))
+                     (t (:foreground ,bright-red :weight bold :underline t))))
+   `(flycheck-warning ((((supports :underline (:style wave)))
+                        (:underline (:style wave :color ,golden-yellow) :inherit unspecified))
+                       (t (:foreground ,golden-yellow :weight bold :underline t))))
+   `(flycheck-info ((((supports :underline (:style wave)))
+                     (:underline (:style wave :color ,sky-blue) :inherit unspecified))
+                    (t (:foreground ,sky-blue :weight bold :underline t))))
+   `(flycheck-fringe-error ((t (:foreground ,bright-red :weight bold))))
+   `(flycheck-fringe-warning ((t (:foreground ,golden-yellow :weight bold))))
+   `(flycheck-fringe-info ((t (:foreground ,sky-blue :weight bold))))
+
    ;; Compilation
-   `(flycheck-error ((t (:underline (:color ,bright-red :style wave)))))
    `(compilation-info ((t (:foreground ,fresh-green :inherit unspecified))))
    `(compilation-warning ((t (:foreground ,coffee-brown :weight bold :inherit unspecified))))
    `(compilation-error ((t (:foreground ,bright-red))))
@@ -261,6 +290,216 @@
    `(custom-variable-tag ((t (:foreground ,sky-blue :weight bold))))
    `(custom-group-tag ((t (:foreground ,goldenrod :weight bold :height 1.2))))
    `(custom-state ((t (:foreground ,fresh-green))))
+
+   ;; Orderless
+   `(orderless-match-face-0 ((t (:foreground ,amber-gold))))
+   `(orderless-match-face-1 ((t (:foreground ,sky-blue))))
+   `(orderless-match-face-2 ((t (:foreground ,fresh-green))))
+   `(orderless-match-face-3 ((t (:foreground ,dusty-rose))))
+
+   ;; Transient
+   `(transient-heading ((t (:foreground ,amber-gold :weight bold))))
+   `(transient-key ((t (:foreground ,goldenrod :weight bold))))
+   `(transient-argument ((t (:foreground ,fresh-green :weight bold))))
+   `(transient-value ((t (:foreground ,sky-blue))))
+   `(transient-inactive-argument ((t (:foreground ,dim-gray))))
+   `(transient-inactive-value ((t (:foreground ,dim-gray))))
+   `(transient-unreachable ((t (:foreground ,dim-gray))))
+   `(transient-unreachable-key ((t (:foreground ,dim-gray))))
+   `(transient-enabled-suffix ((t (:foreground ,fresh-green :weight bold))))
+   `(transient-disabled-suffix ((t (:foreground ,bright-red :weight bold))))
+
+   ;; Eglot
+   `(eglot-highlight-symbol-face ((t (:background ,charcoal-gray :weight bold))))
+   `(eglot-diagnostic-tag-unnecessary-face ((t (:foreground ,dim-gray :underline t))))
+   `(eglot-diagnostic-tag-deprecated-face ((t (:foreground ,dim-gray :strike-through t))))
+
+   ;; Ediff
+   `(ediff-current-diff-A ((t (:background "#2a1010" :extend t))))
+   `(ediff-current-diff-B ((t (:background "#102a10" :extend t))))
+   `(ediff-current-diff-C ((t (:background "#10102a" :extend t))))
+   `(ediff-fine-diff-A ((t (:background ,bright-red :foreground ,pure-black))))
+   `(ediff-fine-diff-B ((t (:background ,fresh-green :foreground ,pure-black))))
+   `(ediff-fine-diff-C ((t (:background ,sky-blue :foreground ,pure-black))))
+   `(ediff-even-diff-A ((t (:background ,charcoal-gray))))
+   `(ediff-even-diff-B ((t (:background ,charcoal-gray))))
+   `(ediff-odd-diff-A ((t (:background ,dark-slate))))
+   `(ediff-odd-diff-B ((t (:background ,dark-slate))))
+
+   ;; Which-key
+   `(which-key-key-face ((t (:foreground ,goldenrod :weight bold))))
+   `(which-key-separator-face ((t (:foreground ,dim-gray))))
+   `(which-key-note-face ((t (:foreground ,dim-gray))))
+   `(which-key-command-description-face ((t (:foreground ,light-bronze))))
+   `(which-key-group-description-face ((t (:foreground ,sky-blue))))
+
+   ;; Outline
+   `(outline-1 ((t (:foreground ,amber-gold))))
+   `(outline-2 ((t (:foreground ,fresh-green))))
+   `(outline-3 ((t (:foreground ,sky-blue))))
+   `(outline-4 ((t (:foreground ,dusty-rose))))
+   `(outline-5 ((t (:foreground ,goldenrod))))
+   `(outline-6 ((t (:foreground ,burnt-orange))))
+   `(outline-7 ((t (:foreground ,sunflower-yellow))))
+   `(outline-8 ((t (:foreground ,bright-orange))))
+
+   ;; Org Mode
+   `(org-level-1 ((t (:foreground ,amber-gold :weight bold))))
+   `(org-level-2 ((t (:foreground ,fresh-green :weight bold))))
+   `(org-level-3 ((t (:foreground ,sky-blue :weight bold))))
+   `(org-level-4 ((t (:foreground ,dusty-rose :weight bold))))
+   `(org-level-5 ((t (:foreground ,goldenrod))))
+   `(org-level-6 ((t (:foreground ,burnt-orange))))
+   `(org-level-7 ((t (:foreground ,sunflower-yellow))))
+   `(org-level-8 ((t (:foreground ,bright-orange))))
+   `(org-block ((t (:background ,jet-black :foreground ,light-bronze :extend t))))
+   `(org-block-begin-line ((t (:foreground ,dim-gray :background ,jet-black :extend t))))
+   `(org-block-end-line ((t (:inherit org-block-begin-line))))
+   `(org-code ((t (:foreground ,bright-orange))))
+   `(org-verbatim ((t (:foreground ,bright-orange))))
+   `(org-document-title ((t (:foreground ,amber-gold :weight bold :height 1.3))))
+   `(org-document-info ((t (:foreground ,dusty-rose))))
+   `(org-document-info-keyword ((t (:foreground ,dim-gray))))
+   `(org-meta-line ((t (:foreground ,dim-gray))))
+   `(org-link ((t (:foreground ,sky-blue :underline t))))
+   `(org-todo ((t (:foreground ,bright-red :weight bold))))
+   `(org-done ((t (:foreground ,fresh-green :weight bold))))
+   `(org-headline-done ((t (:foreground ,dim-gray))))
+   `(org-date ((t (:foreground ,sky-blue :underline t))))
+   `(org-table ((t (:foreground ,sky-blue))))
+   `(org-tag ((t (:weight bold))))
+   `(org-ellipsis ((t (:foreground ,dim-gray))))
+   `(org-hide ((t (:foreground ,rich-black))))
+   `(org-indent ((t (:foreground ,rich-black))))
+   `(org-agenda-date-today ((t (:foreground ,amber-gold :weight bold))))
+   `(org-agenda-structure ((t (:foreground ,dim-gray))))
+   `(org-scheduled ((t (:foreground ,fresh-green))))
+   `(org-scheduled-today ((t (:foreground ,sky-blue))))
+   `(org-warning ((t (:foreground ,bright-red :weight bold))))
+   `(org-upcoming-deadline ((t (:foreground ,goldenrod))))
+   `(org-checkbox ((t (:foreground ,light-bronze))))
+   `(org-footnote ((t (:foreground ,sky-blue :underline t))))
+
+   ;; Org-modern
+   `(org-modern-symbol ((t (:foreground ,light-bronze))))
+   `(org-modern-label ((t (:foreground ,light-bronze :background ,dark-slate :box (:line-width 1 :color ,charcoal-gray)))))
+   `(org-modern-done ((t (:inherit org-modern-label :foreground ,fresh-green))))
+   `(org-modern-todo ((t (:inherit org-modern-label :foreground ,bright-red))))
+   `(org-modern-tag ((t (:inherit org-modern-label :foreground ,goldenrod))))
+   `(org-modern-date-active ((t (:inherit org-modern-label :foreground ,sky-blue))))
+   `(org-modern-date-inactive ((t (:inherit org-modern-label :foreground ,dim-gray))))
+   `(org-modern-priority ((t (:inherit org-modern-label :foreground ,amber-gold))))
+
+   ;; Term / Ansi-term / Vterm
+   `(term-color-black ((t (:foreground ,rich-black :background ,rich-black))))
+   `(term-color-red ((t (:foreground ,bright-red :background ,dusty-rose))))
+   `(term-color-green ((t (:foreground ,fresh-green :background ,fresh-green))))
+   `(term-color-yellow ((t (:foreground ,golden-yellow :background ,goldenrod))))
+   `(term-color-blue ((t (:foreground ,sky-blue :background ,sky-blue))))
+   `(term-color-magenta ((t (:foreground ,dusty-rose :background ,dusty-rose))))
+   `(term-color-cyan ((t (:foreground ,aqua-ice :background ,aqua-ice))))
+   `(term-color-white ((t (:foreground ,light-bronze :background ,light-bronze))))
+
+   ;; Ansi-color (Emacs 28+)
+   `(ansi-color-black ((t (:foreground ,rich-black :background ,rich-black))))
+   `(ansi-color-red ((t (:foreground ,bright-red :background ,bright-red))))
+   `(ansi-color-green ((t (:foreground ,fresh-green :background ,fresh-green))))
+   `(ansi-color-yellow ((t (:foreground ,golden-yellow :background ,golden-yellow))))
+   `(ansi-color-blue ((t (:foreground ,sky-blue :background ,sky-blue))))
+   `(ansi-color-magenta ((t (:foreground ,dusty-rose :background ,dusty-rose))))
+   `(ansi-color-cyan ((t (:foreground ,aqua-ice :background ,aqua-ice))))
+   `(ansi-color-white ((t (:foreground ,light-bronze :background ,light-bronze))))
+   `(ansi-color-bright-black ((t (:foreground ,dim-gray :background ,dim-gray))))
+   `(ansi-color-bright-red ((t (:foreground ,vivid-vermilion :background ,vivid-vermilion))))
+   `(ansi-color-bright-green ((t (:foreground ,fresh-green :background ,fresh-green))))
+   `(ansi-color-bright-yellow ((t (:foreground ,goldenrod :background ,goldenrod))))
+   `(ansi-color-bright-blue ((t (:foreground ,sky-blue :background ,sky-blue))))
+   `(ansi-color-bright-magenta ((t (:foreground ,dusty-rose :background ,dusty-rose))))
+   `(ansi-color-bright-cyan ((t (:foreground ,aqua-ice :background ,aqua-ice))))
+   `(ansi-color-bright-white ((t (:foreground ,light-bronze :background ,light-bronze))))
+
+   ;; Eat
+   `(eat-term-color-0 ((t (:foreground ,rich-black :background ,rich-black))))
+   `(eat-term-color-1 ((t (:foreground ,bright-red :background ,bright-red))))
+   `(eat-term-color-2 ((t (:foreground ,fresh-green :background ,fresh-green))))
+   `(eat-term-color-3 ((t (:foreground ,golden-yellow :background ,golden-yellow))))
+   `(eat-term-color-4 ((t (:foreground ,sky-blue :background ,sky-blue))))
+   `(eat-term-color-5 ((t (:foreground ,dusty-rose :background ,dusty-rose))))
+   `(eat-term-color-6 ((t (:foreground ,aqua-ice :background ,aqua-ice))))
+   `(eat-term-color-7 ((t (:foreground ,light-bronze :background ,light-bronze))))
+
+   ;; Smerge
+   `(smerge-upper ((t (:background "#102a10" :extend t))))
+   `(smerge-lower ((t (:background "#2a1010" :extend t))))
+   `(smerge-markers ((t (:background ,dark-slate :extend t))))
+   `(smerge-refined-added ((t (:background ,fresh-green :foreground ,pure-black))))
+   `(smerge-refined-removed ((t (:background ,bright-red :foreground ,pure-black))))
+
+   ;; Completion-preview
+   `(completion-preview ((t (:foreground ,dim-gray :slant italic))))
+   `(completion-preview-exact ((t (:foreground ,dusty-sage :slant italic))))
+
+   ;; Gptel
+   `(gptel-pre-response-face ((t (:foreground ,dim-gray :slant italic))))
+   `(gptel-post-response-face ((t (:foreground ,light-bronze))))
+
+   ;; Deft
+   `(deft-title-face ((t (:foreground ,amber-gold :weight bold))))
+   `(deft-summary-face ((t (:foreground ,dim-gray))))
+   `(deft-filter-string-face ((t (:foreground ,goldenrod :weight bold))))
+   `(deft-time-face ((t (:foreground ,sky-blue))))
+   `(deft-separator-face ((t (:foreground ,dim-gray))))
+
+   ;; VC-dir
+   `(vc-dir-header ((t (:foreground ,amber-gold :weight bold))))
+   `(vc-dir-header-value ((t (:foreground ,sky-blue))))
+   `(vc-dir-directory ((t (:foreground ,sky-blue :weight bold))))
+   `(vc-dir-file ((t (:foreground ,light-bronze))))
+   `(vc-dir-mark-indicator ((t (:foreground ,goldenrod :weight bold))))
+   `(vc-dir-status-edited ((t (:foreground ,golden-yellow))))
+   `(vc-dir-status-up-to-date ((t (:foreground ,fresh-green))))
+   `(vc-dir-status-added ((t (:foreground ,fresh-green :weight bold))))
+   `(vc-dir-status-removed ((t (:foreground ,bright-red :weight bold))))
+   `(vc-dir-status-conflict ((t (:foreground ,bright-red :weight bold :underline t))))
+   `(vc-dir-status-ignored ((t (:foreground ,dim-gray))))
+   `(vc-dir-status-unregistered ((t (:foreground ,dusty-sage))))
+
+   ;; Log-view
+   `(log-view-file ((t (:foreground ,sky-blue :weight bold))))
+   `(log-view-message ((t (:foreground ,light-bronze))))
+   `(log-edit-summary ((t (:foreground ,amber-gold))))
+   `(log-edit-header ((t (:foreground ,dim-gray))))
+
+   ;; Magit
+   `(magit-section-heading ((t (:foreground ,amber-gold :weight bold))))
+   `(magit-section-highlight ((t (:background ,charcoal-gray-lite :extend t))))
+   `(magit-branch-local ((t (:foreground ,sky-blue :weight bold))))
+   `(magit-branch-remote ((t (:foreground ,fresh-green :weight bold))))
+   `(magit-branch-current ((t (:foreground ,amber-gold :weight bold :box t))))
+   `(magit-tag ((t (:foreground ,golden-yellow :weight bold))))
+   `(magit-hash ((t (:foreground ,dusty-sage))))
+   `(magit-diff-file-heading ((t (:foreground ,amber-gold :weight bold))))
+   `(magit-diff-hunk-heading ((t (:foreground ,sky-blue :background ,dark-slate))))
+   `(magit-diff-hunk-heading-highlight ((t (:foreground ,sky-blue :background ,charcoal-gray-lite))))
+   `(magit-diff-context ((t (:foreground ,light-bronze))))
+   `(magit-diff-context-highlight ((t (:foreground ,light-bronze :background ,charcoal-gray-lite))))
+   `(magit-diff-added ((t (:foreground ,fresh-green :background ,rich-black))))
+   `(magit-diff-added-highlight ((t (:foreground ,fresh-green :background ,charcoal-gray-lite))))
+   `(magit-diff-removed ((t (:foreground ,bright-red :background ,rich-black))))
+   `(magit-diff-removed-highlight ((t (:foreground ,bright-red :background ,charcoal-gray-lite))))
+   `(magit-diffstat-added ((t (:foreground ,fresh-green))))
+   `(magit-diffstat-removed ((t (:foreground ,bright-red))))
+   `(magit-log-author ((t (:foreground ,dusty-rose))))
+   `(magit-log-date ((t (:foreground ,sky-blue))))
+   `(magit-log-graph ((t (:foreground ,light-bronze))))
+   `(magit-blame-heading ((t (:foreground ,light-bronze :background ,dark-slate))))
+   `(magit-blame-hash ((t (:foreground ,dusty-sage))))
+   `(magit-blame-name ((t (:foreground ,dusty-rose))))
+   `(magit-blame-date ((t (:foreground ,sky-blue))))
+
+   ;; Bookmark / Eldoc
+   `(bookmark-face ((t (:foreground ,amber-gold :background ,dark-slate))))
+   `(eldoc-highlight-function-argument ((t (:foreground ,amber-gold :weight bold))))
    ))
 
 ;;;###autoload
