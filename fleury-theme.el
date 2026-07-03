@@ -77,7 +77,6 @@
       (sky-blue-lite      "#2f2f38")
       (bright-red         "#ff0000")
       (fresh-green        "#00EE00")
-      (lime-green         "#003939")
       (vivid-vermilion    "#f0500c")
       (golden-yellow      "#f0bb0c")
       (pure-black         "#000000")
@@ -98,7 +97,6 @@
 
       (mode-line-foreground-active "#e7aa4d")
       (mode-line-background-active "#1a120b")
-      (mode-line-border            "#161616")
       )
 
   (custom-theme-set-faces
@@ -141,7 +139,7 @@
    `(font-lock-type-face ((t (:foreground ,sunflower-yellow))))
    `(font-lock-function-name-face ((t (:foreground ,burnt-orange))))
    `(font-lock-function-call-face ((t (:foreground ,burnt-orange))))
-   `(font-lock-variable-name-face ((t (:foreground ,light-bronze))))
+   `(font-lock-variable-name-face ((t (:foreground ,mauve-pink))))
    `(font-lock-variable-use-face ((t (:foreground ,sky-blue))))
    `(font-lock-warning-face ((t (:foreground ,bright-red :weight bold))))
    `(font-lock-doc-face ((t (:foreground ,fresh-green :slant italic))))
