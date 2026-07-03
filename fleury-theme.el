@@ -90,6 +90,11 @@
       (line-num-bg        "#101010")
       (line-num-fg        "#404040")
       (ghost-green        "#4E5E46")
+      (comment-green      "#2ab34f")
+      (warm-orange        "#de8150")
+      (token-highlight    "#f2d357")
+      (constant-green     "#6eb535")
+      (junk-red           "#3A0000")
 
       (mode-line-foreground-active "#e7aa4d")
       (mode-line-background-active "#1a120b")
@@ -113,9 +118,9 @@
    `(button ((t (:underline t))))
    `(shadow ((t (:foreground ,dim-gray))))
    `(success ((t (:foreground ,fresh-green :weight bold))))
-   `(warning ((t (:foreground ,golden-yellow :weight bold))))
+   `(warning ((t (:foreground ,warm-orange :weight bold))))
    `(error ((t (:foreground ,bright-red))))
-   `(trailing-whitespace ((t (:background ,bright-red))))
+   `(trailing-whitespace ((t (:background ,junk-red))))
    `(escape-glyph ((t (:foreground ,golden-yellow :weight bold))))
 
    ;; Line Numbers
@@ -130,7 +135,7 @@
    `(font-lock-comment-face ((t (:foreground ,dim-gray :slant italic))))
    `(font-lock-keyword-face ((t (:foreground ,goldenrod))))
    `(font-lock-string-face ((t (:foreground ,bright-orange))))
-   `(font-lock-constant-face ((t (:foreground ,bright-orange))))
+   `(font-lock-constant-face ((t (:foreground ,constant-green))))
    `(font-lock-builtin-face ((t (:foreground ,dusty-rose))))
    `(font-lock-preprocessor-face ((t (:foreground ,dusty-rose))))
    `(font-lock-type-face ((t (:foreground ,sunflower-yellow))))
@@ -272,7 +277,7 @@
    `(eshell-ls-symlink ((t (:foreground ,dusty-rose :weight bold))))
 
    ;; HL-Todo
-   `(hl-todo ((t (:foreground ,amber-gold :weight bold))))
+   `(hl-todo ((t (:foreground ,comment-green :weight bold))))
 
    ;; Which Function
    `(which-func ((t (:foreground ,sky-blue))))
@@ -345,7 +350,7 @@
    `(transient-disabled-suffix ((t (:foreground ,bright-red :weight bold))))
 
    ;; Eglot
-   `(eglot-highlight-symbol-face ((t (:background ,charcoal-gray :weight bold))))
+   `(eglot-highlight-symbol-face ((t (:background ,charcoal-gray :foreground ,token-highlight :weight bold))))
    `(eglot-diagnostic-tag-unnecessary-face ((t (:foreground ,dim-gray :underline t))))
    `(eglot-diagnostic-tag-deprecated-face ((t (:foreground ,dim-gray :strike-through t))))
 
