@@ -115,7 +115,7 @@
    ;; Line Numbers
    `(line-number ((t (:foreground ,medium-gray
                       ,@(when fleury-distinct-line-numbers
-                          (list :background dark-slate))))))
+                          (list :background jet-black))))))
    `(line-number-current-line ((t (:foreground ,light-bronze
                                    ,@(when fleury-distinct-line-numbers
                                        (list :background charcoal-gray-lite))))))
