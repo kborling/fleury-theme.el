@@ -273,27 +273,27 @@
 
    ;; Tab Bar
    `(tab-bar ((t (:foreground ,dim-gray :background ,mode-line-background-active))))
-   `(tab-bar-tab ((t (:background ,coffee-brown
+   `(tab-bar-tab ((t (:background ,dark-slate
                                    :foreground ,amber-gold
                                    :weight bold
-                                   :box (:line-width (4 . 2) :color ,coffee-brown)))))
+                                   :box (:line-width (4 . 2) :color ,dark-slate)))))
    `(tab-bar-tab-inactive ((t (:background ,mode-line-background-active
                                             :foreground ,medium-gray
                                             :box (:line-width (4 . 2) :color ,mode-line-background-active)))))
 
    ;; Tab Line
    `(tab-line ((t (:foreground ,dim-gray :background ,mode-line-background-active))))
-   `(tab-line-tab ((t (:background ,coffee-brown
+   `(tab-line-tab ((t (:background ,dark-slate
                                     :foreground ,amber-gold
                                     :weight bold
-                                    :box (:line-width (4 . 2) :color ,coffee-brown)))))
+                                    :box (:line-width (4 . 2) :color ,dark-slate)))))
    `(tab-line-tab-inactive ((t (:background ,mode-line-background-active
                                              :foreground ,medium-gray
                                              :box (:line-width (4 . 2) :color ,mode-line-background-active)))))
-   `(tab-line-tab-current ((t (:background ,coffee-brown
+   `(tab-line-tab-current ((t (:background ,dark-slate
                                             :foreground ,amber-gold
                                             :weight bold
-                                            :box (:line-width (4 . 2) :color ,coffee-brown)))))
+                                            :box (:line-width (4 . 2) :color ,dark-slate)))))
    `(tab-line-highlight ((t (:foreground ,goldenrod))))
    `(tab-line-close-highlight ((t (:foreground ,bright-red))))
 
