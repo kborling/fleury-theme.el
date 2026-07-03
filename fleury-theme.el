@@ -237,11 +237,20 @@
    `(corfu-current ((t (:foreground ,amber-gold :background ,charcoal-gray-lite :weight bold))))
    `(corfu-bar ((t (:background ,medium-gray))))
    `(corfu-border ((t (:background ,dark-slate))))
+   `(corfu-annotations ((t (:foreground ,dim-gray))))
+   `(corfu-deprecated ((t (:foreground ,dim-gray :strike-through t))))
 
    ;; Marginalia
    `(marginalia-documentation ((t (:foreground ,dim-gray))))
    `(marginalia-file-name ((t (:foreground ,light-bronze))))
    `(marginalia-key ((t (:foreground ,goldenrod))))
+   `(marginalia-value ((t (:foreground ,sky-blue))))
+   `(marginalia-date ((t (:foreground ,sky-blue))))
+   `(marginalia-size ((t (:foreground ,fresh-green))))
+   `(marginalia-file-priv-dir ((t (:foreground ,sky-blue))))
+   `(marginalia-file-priv-read ((t (:foreground ,fresh-green))))
+   `(marginalia-file-priv-write ((t (:foreground ,golden-yellow))))
+   `(marginalia-file-priv-exec ((t (:foreground ,bright-red))))
 
    ;; Helpful
    `(helpful-heading ((t (:foreground ,amber-gold :weight bold :height 1.2))))
@@ -522,6 +531,42 @@
    `(magit-blame-hash ((t (:foreground ,dusty-sage))))
    `(magit-blame-name ((t (:foreground ,dusty-rose))))
    `(magit-blame-date ((t (:foreground ,sky-blue))))
+
+   ;; Built-in search/match
+   `(isearch-fail ((t (:background ,rich-black :foreground ,bright-red))))
+   `(match ((t (:background ,dark-slate :foreground ,amber-gold :weight bold))))
+   `(secondary-selection ((t (:background ,charcoal-gray))))
+   `(grep-context-face ((t (:foreground ,light-bronze))))
+   `(grep-error-face ((t (:foreground ,bright-red :weight bold :underline t))))
+   `(grep-hit-face ((t (:foreground ,sky-blue))))
+   `(grep-match-face ((t (:foreground ,amber-gold :weight bold))))
+
+   ;; Flyspell
+   `(flyspell-duplicate
+     ((((supports :underline (:style wave)))
+       (:underline (:style wave :color ,golden-yellow) :inherit unspecified))
+      (t (:foreground ,golden-yellow :weight bold :underline t))))
+   `(flyspell-incorrect
+     ((((supports :underline (:style wave)))
+       (:underline (:style wave :color ,bright-red) :inherit unspecified))
+      (t (:foreground ,bright-red :weight bold :underline t))))
+
+   ;; Diff indicators
+   `(diff-indicator-added ((t (:inherit diff-added))))
+   `(diff-indicator-changed ((t (:inherit diff-changed))))
+   `(diff-indicator-removed ((t (:inherit diff-removed))))
+
+   ;; Embark
+   `(embark-keybinding ((t (:foreground ,goldenrod))))
+
+   ;; Consult
+   `(consult-key ((t (:foreground ,goldenrod))))
+   `(consult-line-number ((t (:foreground ,line-num-fg))))
+   `(consult-separator ((t (:foreground ,charcoal-gray))))
+
+   ;; Term defaults
+   `(term-default-fg-color ((t (:foreground ,light-bronze))))
+   `(term-default-bg-color ((t (:background ,rich-black))))
 
    ;; Bookmark / Eldoc
    `(bookmark-face ((t (:foreground ,amber-gold :background ,dark-slate))))
