@@ -1,74 +1,34 @@
 # fleury-theme.el
 
-Emacs theme inspired by **Ryan Fleury**'s debugger [live stream](https://www.twitch.tv/ryanfleury) at twitch.
+Dark Emacs theme with warm bronze/amber tones. Inspired by Ryan Fleury's debugger [live stream](https://www.twitch.tv/ryanfleury).
 
-This is a maintained fork of the [original fleury-theme](https://github.com/ShamsParvezArka/fleury-theme.el).
+Maintained fork of the [original](https://github.com/ShamsParvezArka/fleury-theme.el) with fixes, broad package coverage, and WCAG AA accessible contrast.
 
-## 🎴 Preview
+## Preview
 ![Image](https://github.com/user-attachments/assets/64ef45eb-80a2-494b-898f-b09bbbb2da2f)
 
-## Installation
-
-### Using use-package with :vc (Emacs 29+)
+## Install
 
 ```elisp
 (use-package fleury-theme
-  :vc (:fetcher github :repo "kborling/fleury-theme.el" :rev :newest)
-  :config
-  (load-theme 'fleury t))
+  :vc (:url "https://github.com/kborling/fleury-theme.el" :rev :newest)
+  :config (load-theme 'fleury t))
 ```
 
-### Manual Installation
+## Supported Packages
 
-1. Clone this repository or download `fleury-theme.el`
-2. Place it in a directory in your `load-path` or add the directory to your `load-path`:
+Core: font-lock (including treesit faces), mode-line, fringe, isearch, diff-mode, dired, eshell, flymake, flycheck, show-paren, ediff, smerge
 
-```elisp
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-```
+Completion: corfu, marginalia, orderless, completion-preview, icomplete
 
-3. Load the theme:
+Development: eglot, transient, which-key, diff-hl, vc-dir, log-view, magit
 
-```elisp
-(load-theme 'fleury t)
-```
+Org: org-mode, org-modern
 
-## Optional Customizations
+Terminal: term, eat, ansi-color
 
-### Highlight Current Line
+UI: tab-bar, tab-line, outline, custom widgets, helpful, deadgrep, deft, gptel
 
-```elisp
-(add-hook 'prog-mode-hook 'hl-line-mode)
-```
+## Accessibility
 
-### Custom Cursor Styling
-
-Set a box cursor by default:
-
-```elisp
-(setq-default cursor-type 'box)
-```
-
-Or use a dynamic cursor that changes based on the mode:
-
-```elisp
-(defun my/update-cursor-type ()
-  "Use a bar cursor in prog-mode and text-mode, box cursor otherwise."
-  (setq cursor-type
-        (if (derived-mode-p 'prog-mode 'text-mode)
-            '(bar . 3)  ; 3-pixel wide bar
-          'box)))
-
-(add-hook 'post-command-hook 'my/update-cursor-type)
-```
-
-## Credits
-
-Original theme by [Shams Parvez Arka](https://github.com/ShamsParvezArka/fleury-theme.el)
-
-## License
-
-MIT License
-
-Copyright (c) 2025 Shams Parvez Arka (original theme)
-Copyright (c) 2025 Kevin Borling (fork modifications and enhancements)
+Comment and line number colors adjusted for WCAG AA contrast ratio against both the background and hl-line highlight.
