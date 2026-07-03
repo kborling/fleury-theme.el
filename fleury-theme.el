@@ -69,14 +69,14 @@
       (jet-black          "#121212")
       (dim-gray           "#888888")
       (goldenrod          "#f0c674")
-      (bright-orange      "#ffaa00")
+      (bright-orange      "#ffa900")
       (dusty-rose         "#dc7575")
       (sunflower-yellow   "#edb211")
       (burnt-orange       "#de451f")
       (sky-blue           "#2895c7")
       (sky-blue-lite      "#2f2f38")
       (bright-red         "#ff0000")
-      (fresh-green        "#66bc11")
+      (fresh-green        "#00EE00")
       (lime-green         "#003939")
       (vivid-vermilion    "#f0500c")
       (golden-yellow      "#f0bb0c")
@@ -84,6 +84,12 @@
       (aqua-ice           "#8ffff2")
       (dusty-sage         "#9ba290")
       (coffee-brown       "#63523d")
+      (dark-red           "#bd2d2d")
+      (mauve-pink         "#c9598a")
+      (muted-brown        "#5c4d3c")
+      (line-num-bg        "#101010")
+      (line-num-fg        "#404040")
+      (ghost-green        "#4E5E46")
 
       (mode-line-foreground-active "#e7aa4d")
       (mode-line-background-active "#1a120b")
@@ -96,7 +102,7 @@
    ;; UI Elements
    `(default ((t (:background ,rich-black :foreground ,light-bronze))))
    `(cursor ((t (:background ,fresh-green))))
-   `(region ((t (:background ,lime-green))))
+   `(region ((t (:background ,gunmetal-blue))))
    `(highlight ((t (:background ,charcoal-gray-lite))))
    `(hl-line ((t (:background ,charcoal-gray-lite :extend t))))
    `(fringe ((t (:background ,rich-black))))
@@ -113,9 +119,9 @@
    `(escape-glyph ((t (:foreground ,golden-yellow :weight bold))))
 
    ;; Line Numbers
-   `(line-number ((t (:foreground ,medium-gray
+   `(line-number ((t (:foreground ,(if fleury-distinct-line-numbers line-num-fg medium-gray)
                       ,@(when fleury-distinct-line-numbers
-                          (list :background mode-line-background-active))))))
+                          (list :background line-num-bg))))))
    `(line-number-current-line ((t (:foreground ,light-bronze
                                    ,@(when fleury-distinct-line-numbers
                                        (list :background charcoal-gray-lite))))))
@@ -135,15 +141,15 @@
    `(font-lock-warning-face ((t (:foreground ,bright-red :weight bold))))
    `(font-lock-doc-face ((t (:foreground ,fresh-green :slant italic))))
    ;; Treesit font-lock faces
-   `(font-lock-bracket-face ((t (:foreground ,light-bronze))))
-   `(font-lock-delimiter-face ((t (:foreground ,light-bronze))))
+   `(font-lock-bracket-face ((t (:foreground ,muted-brown))))
+   `(font-lock-delimiter-face ((t (:foreground ,muted-brown))))
    `(font-lock-escape-face ((t (:foreground ,aqua-ice))))
-   `(font-lock-misc-punctuation-face ((t (:foreground ,light-bronze))))
+   `(font-lock-misc-punctuation-face ((t (:foreground ,muted-brown))))
    `(font-lock-number-face ((t (:foreground ,bright-orange))))
-   `(font-lock-operator-face ((t (:foreground ,goldenrod))))
+   `(font-lock-operator-face ((t (:foreground ,dark-red))))
    `(font-lock-property-name-face ((t (:foreground ,light-bronze))))
    `(font-lock-property-use-face ((t (:foreground ,light-bronze))))
-   `(font-lock-punctuation-face ((t (:foreground ,light-bronze))))
+   `(font-lock-punctuation-face ((t (:foreground ,muted-brown))))
    `(font-lock-regexp-face ((t (:foreground ,fresh-green))))
 
    ;; Mode Line
@@ -456,7 +462,7 @@
    `(smerge-refined-removed ((t (:background ,bright-red :foreground ,pure-black))))
 
    ;; Completion-preview
-   `(completion-preview ((t (:foreground ,dim-gray :slant italic))))
+   `(completion-preview ((t (:foreground ,ghost-green :slant italic))))
    `(completion-preview-exact ((t (:foreground ,dusty-sage :slant italic))))
 
    ;; Gptel
