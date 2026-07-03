@@ -272,26 +272,29 @@
    `(icomplete-selected-match ((t (:background ,charcoal-gray-lite :foreground ,golden-yellow :weight bold))))
 
    ;; Tab Bar
-   `(tab-bar ((t (:foreground ,dim-gray :background ,rich-black))))
-   `(tab-bar-tab ((t (:background ,charcoal-gray-lite
+   `(tab-bar ((t (:foreground ,dim-gray :background ,mode-line-background-active))))
+   `(tab-bar-tab ((t (:background ,mode-line-background-active
                                    :foreground ,amber-gold
-                                   :box (:line-width (4 . 2) :color ,charcoal-gray-lite)))))
-   `(tab-bar-tab-inactive ((t (:background ,rich-black
-                                            :foreground ,dim-gray
-                                            :box (:line-width (4 . 2) :color ,rich-black)))))
+                                   :weight bold
+                                   :box (:line-width (4 . 2) :color ,mode-line-background-active)))))
+   `(tab-bar-tab-inactive ((t (:background ,mode-line-background-active
+                                            :foreground ,coffee-brown
+                                            :box (:line-width (4 . 2) :color ,mode-line-background-active)))))
 
    ;; Tab Line
-   `(tab-line ((t (:foreground ,dim-gray :background ,rich-black))))
-   `(tab-line-tab ((t (:background ,charcoal-gray-lite
+   `(tab-line ((t (:foreground ,dim-gray :background ,mode-line-background-active))))
+   `(tab-line-tab ((t (:background ,mode-line-background-active
                                     :foreground ,amber-gold
-                                    :box (:line-width (4 . 2) :color ,charcoal-gray-lite)))))
-   `(tab-line-tab-inactive ((t (:background ,rich-black
-                                             :foreground ,dim-gray
-                                             :box (:line-width (4 . 2) :color ,rich-black)))))
-   `(tab-line-tab-current ((t (:background ,charcoal-gray-lite
+                                    :weight bold
+                                    :box (:line-width (4 . 2) :color ,mode-line-background-active)))))
+   `(tab-line-tab-inactive ((t (:background ,mode-line-background-active
+                                             :foreground ,coffee-brown
+                                             :box (:line-width (4 . 2) :color ,mode-line-background-active)))))
+   `(tab-line-tab-current ((t (:background ,mode-line-background-active
                                             :foreground ,amber-gold
-                                            :box (:line-width (4 . 2) :color ,charcoal-gray-lite)))))
-   `(tab-line-highlight ((t (:background ,charcoal-gray :foreground ,goldenrod))))
+                                            :weight bold
+                                            :box (:line-width (4 . 2) :color ,mode-line-background-active)))))
+   `(tab-line-highlight ((t (:foreground ,goldenrod))))
    `(tab-line-close-highlight ((t (:foreground ,bright-red))))
 
    ;; Widget Faces
