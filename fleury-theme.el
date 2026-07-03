@@ -54,6 +54,9 @@
 
 (deftheme fleury "The fleury color theme.")
 
+(defvar fleury-distinct-line-numbers t
+  "When non-nil, line numbers have a distinct background.")
+
 ;; Color palette
 (let ((rich-black         "#020202")
       (light-bronze       "#b99468")
@@ -110,8 +113,12 @@
    `(escape-glyph ((t (:foreground ,golden-yellow :weight bold))))
 
    ;; Line Numbers
-   `(line-number ((t (:foreground ,medium-gray :background ,rich-black))))
-   `(line-number-current-line ((t (:background ,charcoal-gray-lite :foreground ,light-bronze))))
+   `(line-number ((t (:foreground ,medium-gray
+                      ,@(when fleury-distinct-line-numbers
+                          (list :background dark-slate))))))
+   `(line-number-current-line ((t (:foreground ,light-bronze
+                                   ,@(when fleury-distinct-line-numbers
+                                       (list :background charcoal-gray-lite))))))
 
    ;; Font Lock Faces
    `(font-lock-comment-face ((t (:foreground ,dim-gray :slant italic))))
